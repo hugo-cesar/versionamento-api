@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Versionamento.Api.Domain;
 
 namespace Versionamento.Api.Controllers
 {
@@ -17,6 +18,8 @@ namespace Versionamento.Api.Controllers
 		[HttpGet("{id}")]
 		public IActionResult GetV1([FromRoute] int id)
 		{
+			throw new DomainException($"Carro id: {id} não foi encontrado.");
+
 			var carroResponse = new CarroDTO(id, "Cruze", "V1");
 
 			return Ok(carroResponse);

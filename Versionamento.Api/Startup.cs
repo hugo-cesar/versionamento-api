@@ -14,6 +14,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
 using Swashbuckle.AspNetCore.SwaggerGen;
 using Versionamento.Api.Infrastructure;
+using Versionamento.Api.Infrastructure.Middlewares;
 using Versionamento.Api.Swagger;
 
 namespace Versionamento.Api
@@ -81,6 +82,8 @@ namespace Versionamento.Api
 						options.SwaggerEndpoint($"/api-docs/{description.GroupName}/docs.json", description.GroupName.ToUpperInvariant());
 				});
 			}
+
+			app.UseApiExceptionHandling();
 
 			app.UseHttpsRedirection();
 
