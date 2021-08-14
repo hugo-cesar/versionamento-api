@@ -13,7 +13,6 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
 using Swashbuckle.AspNetCore.SwaggerGen;
-using Versionamento.Api.Infrastructure;
 using Versionamento.Api.Infrastructure.Middlewares;
 using Versionamento.Api.Swagger;
 
@@ -58,6 +57,7 @@ namespace Versionamento.Api
 			{
 				// adiciona um filtro de operação personalizado que define os valores padrão
 				options.OperationFilter<SwaggerDefaultValues>();
+				options.SchemaFilter<SwaggerExcludePropertySchemaFilter>();
 				options.ResolveConflictingActions(apiDescriptions => apiDescriptions.First());
 
 				var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";

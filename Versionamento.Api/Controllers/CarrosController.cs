@@ -18,7 +18,7 @@ namespace Versionamento.Api.Controllers
 		[HttpGet("{id}")]
 		public IActionResult GetV1([FromRoute] int id)
 		{
-			throw new DomainException($"Carro id: {id} não foi encontrado.");
+			// throw new DomainException($"Carro id: {id} não foi encontrado.");
 
 			var carroResponse = new CarroDTO(id, "Cruze", "V1");
 
@@ -41,6 +41,13 @@ namespace Versionamento.Api.Controllers
 			var carroResponse = new CarroDTO(id, "Cruze", "V3");
 
 			return Ok(carroResponse);
+		}
+
+		[HttpPost]
+		[MapToApiVersion("1.0")]
+		public IActionResult PostV1([FromBody] CarroDTO carroDto)
+		{
+			return Ok();
 		}
 
 	}

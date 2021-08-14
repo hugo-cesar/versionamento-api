@@ -1,4 +1,5 @@
 ﻿using System;
+using Versionamento.Api.Swagger;
 
 namespace Versionamento.Api
 {
@@ -11,6 +12,7 @@ namespace Versionamento.Api
 			Versao = versao;
 		}
 
+		[SwaggerIgnoreProperty]
 		public int Id { get; set; }
 		public string Nome { get; set; }
 		public string Versao { get; set; }

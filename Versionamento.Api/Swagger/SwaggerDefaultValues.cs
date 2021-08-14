@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.SwaggerGen;
 
-namespace Versionamento.Api.Infrastructure
+namespace Versionamento.Api.Swagger
 {
     /// <summary>
     /// Representa o filtro de operação Swagger / Swashbuckle usado para documentar o parâmetro de versão da API implícito.
