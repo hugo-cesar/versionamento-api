@@ -1,4 +1,7 @@
+using System;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -55,6 +58,10 @@ namespace Versionamento.Api
 				// adiciona um filtro de operação personalizado que define os valores padrão
 				options.OperationFilter<SwaggerDefaultValues>();
 				options.ResolveConflictingActions(apiDescriptions => apiDescriptions.First());
+
+				var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+				var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+				options.IncludeXmlComments(xmlPath);
 			});
 
 			//URL da API em letras minúsculas: Carros -> carros

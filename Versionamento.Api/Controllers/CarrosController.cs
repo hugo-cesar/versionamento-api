@@ -9,6 +9,11 @@ namespace Versionamento.Api.Controllers
 	[ApiVersion("3.0")]
 	public class CarrosController : ControllerBase
 	{
+		/// <summary>
+		/// Esta API recupera um carro pelo id
+		/// </summary>
+		/// <response code="200">Retorna um carro</response>
+		/// <response code="400">Apenas para demonstração</response>
 		[HttpGet("{id}")]
 		public IActionResult GetV1([FromRoute] int id)
 		{
