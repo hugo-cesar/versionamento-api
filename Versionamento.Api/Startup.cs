@@ -34,25 +34,25 @@ namespace Versionamento.Api
 				options.DefaultApiVersion = ApiVersion.Default;
 				options.ApiVersionReader = ApiVersionReader.Combine(
 					new MediaTypeApiVersionReader("version"), //passa o version no header na Key accept. Ex: application/json;version=2.0
-					new HeaderApiVersionReader("api-version")); //aceita uma nova Key X-version no header
+					new HeaderApiVersionReader("api-version")); //aceita uma nova Key api-version no header
 				options.ReportApiVersions = true;
 			});
 
 			services.AddVersionedApiExplorer(options =>
 			{
-				// add the versioned api explorer, which also adds IApiVersionDescriptionProvider service
-				// note: the specified format code will format the version as "'v'major[.minor][-status]"
+				// adiciona o API explorer versionado, que também adiciona o serviço IApiVersionDescriptionProvider
+				// observação: o código de formato especificado formatará a versão como "'v'major [.minor] [- status]"
 				options.GroupNameFormat = "'v'VVV";
 
-				// note: this option is only necessary when versioning by url segment. the SubstitutionFormat
-				// can also be used to control the format of the API version in route templates
+				// nota: esta opção só é necessária ao controlar a versão por segmento de url.
+				// o SubstitutionFormat também pode ser usado para controlar o formato da versão da API em modelos de rota
 				//options.SubstituteApiVersionInUrl = true;
 			});
 
 			services.AddTransient<IConfigureOptions<SwaggerGenOptions>, ConfigureSwaggerOptions>();
 			services.AddSwaggerGen(options =>
 			{
-				// add a custom operation filter which sets default values
+				// adiciona um filtro de operação personalizado que define os valores padrão
 				options.OperationFilter<SwaggerDefaultValues>();
 				options.ResolveConflictingActions(apiDescriptions => apiDescriptions.First());
 			});

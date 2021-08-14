@@ -6,18 +6,18 @@ using Swashbuckle.AspNetCore.SwaggerGen;
 
 namespace Versionamento.Api.Infrastructure
 {
-	/// <summary>
-	/// Represents the Swagger/Swashbuckle operation filter used to document the implicit API version parameter.
-	/// </summary>
-	/// <remarks>This <see cref="IOperationFilter"/> is only required due to bugs in the <see cref="SwaggerGenerator"/>.
-	/// Once they are fixed and published, this class can be removed.</remarks>
-	public class SwaggerDefaultValues : IOperationFilter
+    /// <summary>
+    /// Representa o filtro de operação Swagger / Swashbuckle usado para documentar o parâmetro de versão da API implícito.
+    /// </summary>
+    /// <remarks>This <see cref="IOperationFilter"/> só é necessário devido a bugs no <see cref="SwaggerGenerator"/>.
+    /// Depois de corrigidos e publicados, esta classe pode ser removida.</remarks>
+    public class SwaggerDefaultValues : IOperationFilter
     {
         /// <summary>
-        /// Applies the filter to the specified operation using the given context.
+        /// Aplica o filtro à operação especificada usando o contexto fornecido.
         /// </summary>
-        /// <param name="operation">The operation to apply the filter to.</param>
-        /// <param name="context">The current operation filter context.</param>
+        /// <param name="operation">A operação para aplicar o filtro.</param>
+        /// <param name="context">O contexto do filtro de operação atual.</param>
         public void Apply(OpenApiOperation operation, OperationFilterContext context)
         {
             var apiDescription = context.ApiDescription;
