@@ -1,10 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Versionamento.Api.DTO;
+using VersionamentoURL.Api.DTO;
 
-namespace Versionamento.Api.Controllers.V2
+namespace VersionamentoURL.Api.Controllers.V2
 {
 	[ApiController]
-	[Route("api/v{version:apiVersion}/[controller]")] //Versionamento através da rota
+	[Route("api/v{version:apiVersion}/[controller]")]
 	[ApiVersion("2.0")]
 	public class BicicletasController : ControllerBase
 	{

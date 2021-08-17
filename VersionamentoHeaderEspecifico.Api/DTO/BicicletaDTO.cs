@@ -1,4 +1,4 @@
-﻿namespace Versionamento.Api
+﻿namespace VersionamentoHeaderEspecifico.Api.DTO
 {
 	public class BicicletaDTO : VeiculoDTO
 	{

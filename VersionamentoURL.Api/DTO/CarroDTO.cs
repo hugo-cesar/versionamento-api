@@ -1,4 +1,4 @@
-﻿namespace Versionamento.Api
+﻿namespace VersionamentoURL.Api.DTO
 {
 	public class CarroDTO : VeiculoDTO
 	{

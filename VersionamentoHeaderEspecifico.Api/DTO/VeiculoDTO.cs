@@ -1,7 +1,6 @@
-﻿using System;
-using Versionamento.Api.Swagger;
+﻿using VersionamentoHeaderEspecifico.Api.Swagger;
 
-namespace Versionamento.Api
+namespace VersionamentoHeaderEspecifico.Api.DTO
 {
 	public abstract class VeiculoDTO
 	{

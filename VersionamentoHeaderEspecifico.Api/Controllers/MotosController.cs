@@ -1,11 +1,11 @@
 ﻿using System;
 using Microsoft.AspNetCore.Mvc;
-using Versionamento.Api.DTO;
+using VersionamentoHeaderEspecifico.Api.DTO;
 
-namespace Versionamento.Api.Controllers
+namespace VersionamentoHeaderEspecifico.Api.Controllers
 {
 	[ApiController]
-	[Route("api/v{version:apiVersion}/[controller]")] //Versionamento através da rota
+	[Route("api/[controller]")]
 	[ApiVersion("1.0")]
 	[ApiVersion("2.0")]
 	public class MotosController : ControllerBase

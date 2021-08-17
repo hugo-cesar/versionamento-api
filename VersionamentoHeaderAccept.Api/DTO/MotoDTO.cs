@@ -1,4 +1,4 @@
-﻿namespace Versionamento.Api
+﻿namespace VersionamentoHeaderAccept.Api.DTO
 {
 	public class MotoDTO : VeiculoDTO
 	{

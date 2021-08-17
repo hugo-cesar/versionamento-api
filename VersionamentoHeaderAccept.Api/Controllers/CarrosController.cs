@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Versionamento.Api.DTO;
+using VersionamentoHeaderAccept.Api.DTO;
 
-namespace Versionamento.Api.Controllers
+namespace VersionamentoHeaderAccept.Api.Controllers
 {
 	[ApiController]
 	[Route("api/[controller]")]
